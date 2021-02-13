@@ -1,3 +1,3 @@
 # react-projects
 
-This is a collections of projects created during my journey learning React.js
+This is a collections of projects created during my journey learning React.js.
