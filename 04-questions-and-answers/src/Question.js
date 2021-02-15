@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+
 // some icons
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 const Question = ({ title, info }) => {
