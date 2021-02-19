@@ -6,7 +6,7 @@ const people = [
     name: 'Youpele Michael',
     title: 'data scientist/web developer',
     quote:
-      'Those who are crazy enough to think that they can change the world are the ones who do',
+      'Those who are crazy enough to think that they can change the world are the ones who  do',
   },
   {
     id: 1,
