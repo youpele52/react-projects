@@ -21,7 +21,7 @@ const Navbar = () => {
   }
 
   const handleSubmenu = (e) => {
-    // in the navbar all the button has a class name of 'link-btn'
+    // in the navbar all the buttons have a class name of 'link-btn'
     // so if any of the element in the navbar that we do mouse over that does not have that 'link-btn' className
     // then we close our submenu
     if (!e.target.classList.contains('link-btn')) {

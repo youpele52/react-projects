@@ -1,0 +1,84 @@
+// state is the current state before the update
+// action what is trying todo
+const reducer = (state, action) => {
+  if (action.type === 'CLEAR_CART') {
+    // we spread and leave other state values unchanged except cart, cos we are clearing it out
+    return { ...state, cart: [] }
+  }
+
+  if (action.type === 'REMOVE') {
+    return {
+      ...state,
+      cart: state.cart.filter((cartItem) => cartItem.id !== action.payload),
+      //   payload is our id in context.js.......dispatch({ type: 'REMOVE', payload: id })
+    }
+  }
+  //   if (action.type === 'INCREASE') {
+  //     let tempCart = state.cart.map((cartItem) => {
+  //       if (cartItem.id === action.payload) {
+  //         return { ...cartItem, amount: cartItem.amount + 1 }
+  //       }
+  //       return cartItem
+  //     })
+  //     return { ...state, cart: tempCart }
+  //   }
+  //   if (action.type === 'DECREASE') {
+  //     let tempCart = state.cart
+  //       .map((cartItem) => {
+  //         if (cartItem.id === action.payload) {
+  //           return { ...cartItem, amount: cartItem.amount - 1 }
+  //         }
+  //         return cartItem
+  //       })
+  //       .filter((cartItem) => cartItem.amount !== 0) //if the cartItem.amount ===0, we remove it from our list
+  //     return { ...state, cart: tempCart }
+  //   }
+  if (action.type === 'GET_TOTAL') {
+    //   in line below, cartTotal is our accumulator and amount is the currentValue in our reduce func
+    // the let { total, amount }, is we destructuring the reduce func
+    // passing in cartTotal to total and amount to amount
+    let { total, amount } = state.cart.reduce(
+      (cartTotal, cartItem) => {
+        const { price, amount } = cartItem
+        const itemTotal = price * amount
+        cartTotal.total += itemTotal
+        cartTotal.amount += amount
+        return cartTotal
+      },
+      //   this is our initial value for total and amount
+      { total: 0, amount: 0 }
+    )
+    total = parseFloat(total.toFixed(2))
+    return { ...state, total, amount }
+  }
+  if (action.type === 'LOADING') {
+    return { ...state, loading: true }
+  }
+  if (action.type === 'DISPLAY_ITEMS') {
+    // if the data was successful fetched from the api, thus our payload will be cart from the api
+    // we will pass in here for display
+    return { ...state, cart: action.payload, loading: false }
+  }
+  //   increase and decrease combine
+  if (action.type === 'TOGGLE_AMOUNT') {
+    let tempCart = state.cart
+      .map((cartItem) => {
+        if (cartItem.id === action.payload.id) {
+          if (action.payload.type === 'increase') {
+            return { ...cartItem, amount: cartItem.amount + 1 }
+          }
+          if (action.payload.type === 'decrease') {
+            return { ...cartItem, amount: cartItem.amount - 1 }
+          }
+        }
+        return cartItem
+      })
+      .filter((cartItem) => cartItem.amount !== 0) //if the cartItem.amount ===0, we remove it from our list
+
+    return { ...state, cart: tempCart }
+  }
+  //  if the action type does not match we throw this error
+  throw new Error('No matching action type!')
+}
+
+export default reducer

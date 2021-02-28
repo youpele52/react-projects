@@ -4,7 +4,8 @@ import sublinks from './data'
 
 const AppContext = React.createContext()
 
-// note must pass in children
+// we will use AppProvider to wrap our App component
+// note we must pass in children
 export const AppProvider = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false)
@@ -22,6 +23,7 @@ export const AppProvider = ({ children }) => {
   const openSubmenu = (text, coordinates) => {
     //   getting the correct respective page anytime we do mouseover
     // we find the page (text) that is coming from the button ie when we mouse over the menus
+    // find link, then return where link.page === text and set it to page
     const page = sublinks.find((link) => link.page === text)
     setPage(page)
     setLocation(coordinates)
