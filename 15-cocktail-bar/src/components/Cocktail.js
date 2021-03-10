@@ -14,7 +14,7 @@ const Cocktail = ({ image, name, id, info, glass, instruction, category }) => {
         <p>
           {info}/{category}
         </p>
-        <p>For your Pleasure: {instruction}</p>
+        {/* <p>For your Pleasure: {instruction}</p> */}
         {/* this Link will take us to the full details or single page of the clicked cocktail */}
         <Link to={`/cocktail/${id}`} className='btn btn-primary btn-details'>
           Details

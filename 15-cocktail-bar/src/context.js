@@ -11,7 +11,8 @@ const AppProvider = ({ children }) => {
   const [cocktails, setCocktails] = useState([])
 
   // this fetch drinks would be used multiple times, anytime we type on the search bar, we will fetch from our api
-  const fetchDrinks = async () => {
+  // useCallback= only if something changes about this function(esp the searchTerm) then create the func again from the scratch
+  const fetchDrinks = useCallback(async () => {
     setLoading(true)
     try {
       const response = await fetch(`${url}${searchTerm}`)
@@ -55,11 +56,12 @@ const AppProvider = ({ children }) => {
       console.log(error)
       setLoading(false)
     }
-  }
+    // searchTerm is crucial to this function that is why here we make it a dependencies in our callback
+  }, [searchTerm])
 
   useEffect(() => {
     fetchDrinks()
-  }, [searchTerm])
+  }, [searchTerm, fetchDrinks])
   return (
     <AppContext.Provider
       value={{ loading, searchTerm, setSearchTerm, cocktails }}
