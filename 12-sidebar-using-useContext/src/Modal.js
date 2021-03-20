@@ -12,6 +12,7 @@ const Modal = () => {
     >
       <div className='modal-container'>
         <h3>modal content</h3>
+
         <img
           src='https://media-exp1.licdn.com/dms/image/C4D03AQHx8V6oD5HHEg/profile-displayphoto-shrink_200_200/0/1534074844642?e=1619049600&v=beta&t=vZFvyo6MO530PgKKTetDB8G7_VdopQS9561Q-wtJEY4'
           alt='Youpele'
