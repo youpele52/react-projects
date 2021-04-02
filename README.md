@@ -2,7 +2,7 @@
 
 This is a collections of projects created during my journey learning React.js.
 
-Birthday Reminder https://vercel.com/youpele52/birthday-reminder
+Birthday Reminder https://birthday-reminder-rho.vercel.app/
 
 Reviews https://review-app-mu.vercel.app/
 
