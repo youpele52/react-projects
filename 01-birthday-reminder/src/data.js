@@ -4,7 +4,7 @@ export default [
     name: 'Youpele Michael',
     age: 30,
     image:
-      'https://media-exp1.licdn.com/dms/image/C4D03AQHx8V6oD5HHEg/profile-displayphoto-shrink_200_200/0/1534074844642?e=1618444800&v=beta&t=hLKazM53MIOYmV9pXAL09GTcZvSV7Ctpgy7PuPEfd08',
+      'https://pbs.twimg.com/profile_images/1376783474821111808/frQSDhkf_400x400.jpg',
   },
   {
     id: 1,
