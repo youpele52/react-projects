@@ -40,7 +40,7 @@ const reviews = [
     name: 'Youpele Michael',
     job: 'CEO/Co-founder',
     image:
-      'https://media-exp1.licdn.com/dms/image/C4D03AQHx8V6oD5HHEg/profile-displayphoto-shrink_200_200/0/1534074844642?e=1619049600&v=beta&t=vZFvyo6MO530PgKKTetDB8G7_VdopQS9561Q-wtJEY4',
+      'https://media-exp1.licdn.com/dms/image/C4D03AQHx8V6oD5HHEg/profile-displayphoto-shrink_400_400/0/1534074844642?e=1633564800&v=beta&t=MW756RWqUgpmsUwK-DXwvE-NX3Q2bATYPRbs2_GFccI',
     text:
       'Those people who are crazy enough to think that they can change the world are the ones that actually do.',
   },
